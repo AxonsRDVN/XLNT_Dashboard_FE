@@ -16,7 +16,6 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { viVN } from '@mui/x-date-pickers/locales';
 import moment from 'moment';
 import dayjs from 'dayjs';
-import { HOST_URL_API } from '../../utils/configs/api.config';
 import { ToastContainer } from 'react-toastify';
 import { Plants } from '../../utils/configs/app.config';
 import { useState } from 'react';
@@ -49,7 +48,7 @@ const Transaction = (props) => {
             } else if (type === 'month') {
                 formatValue = dayjs(value).format('MM-YYYY')
             }
-            urlApi = `${HOST_URL_API}/xlnt-api/report/download-report?type=${type}&value=${formatValue}&plantCode=${plantCode}`
+            urlApi = `${process.env.REACT_APP_BASE_URL}/xlnt-api/report/download-report?type=${type}&value=${formatValue}&plantCode=${plantCode}`
         } else {
             flagCheckInput = false
         }

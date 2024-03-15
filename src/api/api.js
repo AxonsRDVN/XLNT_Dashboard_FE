@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { HOST_URL_API } from '../utils/configs/api.config';
+
 
 const API = axios.create({
-	baseURL: `${HOST_URL_API}/xlnt-api`,
+	baseURL: `${process.env.REACT_APP_BASE_URL}/xlnt-api`,
 	headers: {
 		'Content-Type': 'application/json',
 	},
